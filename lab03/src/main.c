@@ -1,6 +1,7 @@
 int main ()
 {
 // 1
+
 #define R1 5
 #define R2 10
 #define R3 15
@@ -14,9 +15,9 @@ main_resist = R1*R2*R3/(R1+R2+R3);
 
 #define NUMBER 458
 
-int sot = ( NUMBER / 100 );
+int sot = ( NUMBER / 10 );
 int des = ( NUMBER % 100 ) / 10;
-int ed = ( NUMBER % 100 ) % 10;
+int ed = ( NUMBER % 10 );
 
 int end_num = ed * 100 + des * 10 + sot;
 
@@ -52,10 +53,10 @@ value_d = numeral4 + numeral3 * SYSTEM_P + numeral2 * SYSTEM_P * SYSTEM_P + nume
 
 //5
 
-#define NUM 123
+#define NUMB 123
 
-int first_ch = ( NUM /100 );
-int third_ch = ( NUM % 100 ) % 10;
+int first_ch = ( NUMB /100 );
+int third_ch = ( NUMB % 100 ) % 10;
 
 float diff = first_ch / (float)third_ch;
 diff *= 100;
@@ -66,10 +67,11 @@ diff /= 100;
 
 
 // 6
-#define NUM_1 67
-#define NUM_2 63
 
-int sum = ( NUM_1 + NUM_2 / 2 ) * ( NUM_2 - NUM_1 + 1 );
+#define NUM1 60
+#define NUM2 64
+
+int end_num1 = ( ( NUM1 + NUM2 ) / 2 ) * ( NUM2 - NUM1 + 1 );
 
 
 return 0;
