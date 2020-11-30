@@ -41,13 +41,24 @@ int main(){
 
 //Визначити, чи є ціле 6-ти значне число "щасливим" квитком
 
- int num = 228912;
-    char result2;
-    int sum1 = num / 100000 + (num / 10000) % 10 + (num / 1000) % 10;
-    int sum2 = (num / 100) % 10 + (num / 10) % 10 + num % 10;
-    if (sum1 == sum2) result2 = 'Y';
-    else result2 = 'N';
+    int n = 228912;
+    int res1 = 0;
+    int res2 = 0;
+    char res;
 
+    while (n / 1000) {
+        res1 += n % 10;
+        n = n / 10;
+    }
+    while (n % 1000) {
+        res2 += n % 10;
+        n = n / 10;
+    }
+    if (res1 == res2) {
+        res = 'Y';
+    } else {
+        res = 'N';
+    }
 
 //4
 
@@ -67,12 +78,22 @@ int main(){
 
 //Визначити корінь заданого числа
 
-#define MIST 0.01
+/*#define MIST 0.01
 	double sqrt = 0;
 	double num4 = 225;
 	while (sqrt * sqrt < num4){
 		sqrt += MIST;
-	}
+	}*/
+
+#define VALUE 225
+double v = VALUE;
+double a1 = 0.0000000001;
+double root = v / 2;
+while ( root - v / root > a1 )
+{
+    root = 0.5 * ( root + v / root );
+}
+
    return 0;
 }
 
