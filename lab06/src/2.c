@@ -28,8 +28,5 @@ int main() {
     is_simple = 't';
   }
 
-  for (int i = 0; i < numbers_amount; i++) {
-    printf("%d ", prime_numbers[i]);
-  }
   return 0;
 }
