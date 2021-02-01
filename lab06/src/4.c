@@ -1,17 +1,16 @@
-#define SENTENCE_LENGTH 37
+#define SENT 28
 
 int main() {
-  char sentence[SENTENCE_LENGTH] = "dfghjk lkjhgf ertyuio";
-  int words_counter = 0;
-  /*Если видим пробел перед которым стоит другой
-    символ - очевидно это новое слово*/
-  for (int i = 1; i < SENTENCE_LENGTH; i++) {
+  char sentence[SENT] = "Жили у бабуси два веселых гуся";
+  int w_counter = 0;
+
+  for (int i = 1; i < SENT; i++) {
     if (sentence[i] == ' ') {
         if (sentence[i-1] != ' ') {
-            words_counter++;
+            w_counter++;
         }
     }
   }
-  if (sentence[SENTENCE_LENGTH - 1] != ' ') words_counter++;
+  if (sentence[SENT - 1] != ' ') w_counter++;
   return 0;
 }

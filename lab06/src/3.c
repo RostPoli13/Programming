@@ -1,6 +1,6 @@
 int main(){
-  int number = 3465;
-    //обьявляем массивы со словесными названиями цифр
+  int number = 1313;
+    //Обьявление масивов
   char * thousands[9] = {"тысяча", "две тысячи", "три тысячи", "четыре тысячи", "пять тысячь", "шесть тысячь", "семь тысячь", "восемь тысячь", "девять тысячь"};
   char * hundreds[9] = {"сто", "двести", "триста", "четыреста", "пятьсот", "шестьсот", "семьсот", "восемьсот", "девятьсот"};
   char * tens[9] = {"десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто"};
@@ -9,16 +9,15 @@ int main(){
 
   char * result[4];
 
-  //достаем каждую цифру из числа
-  int firstNum = (number - (number%1000))/1000;
+  //Проверяем каждую цифру
+  int first_num = (number - (number%1000))/1000;
   int secondNum = ((number%1000)-(number%100))/100;
   int thirdNum = ((number%100)-(number%10))/10;
   int fourthNum = (number%10);
 
-  //последние две цифры
-  int tensSum = (thirdNum*10) + fourthNum;;
+    int tensSum = (thirdNum*10) + fourthNum;;
 
-  //проверка на ноль и на то, что число может быть больше чем 9999
+  //Проверка
   if (number == 0){
 
     result[0] = "ноль";
@@ -30,7 +29,7 @@ int main(){
 
   }else if(number > 9999){
 
-    result[0] = "Ошибка! Число больше чем 9999!";
+    result[0] = "Больше чем 9999!";
 
     for (int i = 1; i < 3; i++)
     {
@@ -39,11 +38,11 @@ int main(){
 
   }
 
-  //условия занесения в массив result
+  //условия занесения в массив 
   
   if (number >= 1000 && number <= 9999){
 
-    result[0] = thousands[firstNum-1];
+    result[0] = thousands[first_num-1];
     result[1] = hundreds[secondNum-1];
 
     if (tensSum < 20 && tensSum > 10){

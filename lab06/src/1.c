@@ -5,23 +5,24 @@ int main() {
   char word[WORD_LENGTH] = "Ivanov        \0";
   char answer[WORD_LENGTH];
   answer[WORD_LENGTH - 1] = '\0';
-  int spaces_counter = 0;
+  int sp_count = 0;
 
-  /*Здесь узнаём кол-во пробелов*/
+  //Узнаём кол-во пробелов
   for (int i = 0; i < WORD_LENGTH - 1; i++) {
-    if (word[i] == ' ') spaces_counter++;
+    if (word[i] == ' ') sp_count++;
+    if (word[i] == ' ') sp_count++;
   }
 
-  /*В начале строки заполняем филлером ровно половину пробелов*/
-  for (int i = 0; i < spaces_counter / 2; i++) {
+  //Начало строки заполняем наполнителем(filler) половину пробелов
+  for (int i = 0; i < sp_count / 2; i++) {
     answer[i] = filler;
   }
-  /*Далее вставляем слово*/
-  for (int i = 0; i < WORD_LENGTH - spaces_counter - 1; i++) {
-    answer[i + spaces_counter / 2] = word[i];
+  //Далее вставляем слово
+  for (int i = 0; i < WORD_LENGTH - sp_count - 1; i++) {
+    answer[i + sp_count / 2] = word[i];
   }
-  /*Остаток строки заполняем филлером*/
-  for (int i = WORD_LENGTH - spaces_counter / 2 - 1; i < WORD_LENGTH - 1; i++) {
+  //Остальную часть строки заполняем наполнителем(filler)
+  for (int i = WORD_LENGTH - sp_count / 2 - 1; i < WORD_LENGTH - 1; i++) {
     answer[i] = filler;
   }
   return 0;
